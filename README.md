@@ -32,7 +32,7 @@ pip install pandas matplotlib seaborn
 
 ## Usage
 
-To use these scripts, simply run them in a directory containing the required data files. The scripts will automatically find all relevant files in the current directory and its subdirectories, process the data, and generate the charts or tables.
+To use these scripts, simply run them in a directory containing the required data files. The scripts will automatically find all relevant files in the current directory and its subdirectories, process the data, and generate the charts or tables grouping them by timeBudget.
 
 ```bash
 python JUGE-Chart.py
