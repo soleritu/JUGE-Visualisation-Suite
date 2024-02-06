@@ -1,6 +1,6 @@
 # JUGE Visualisation Suite
 
-The JUGE Visualisation Suite is a collection of Python scripts used for processing and visualizing benchmarking data. The suite includes the following scripts:
+The JUGE Visualisation Suite is a collection of Python scripts used for processing and visualizing benchmarking data for the [JUGE Framework](https://github.com/JUnitContest/JUGE). The suite includes the following scripts:
 
 ## JUGE-Chart
 
