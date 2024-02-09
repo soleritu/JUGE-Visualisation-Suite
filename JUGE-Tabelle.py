@@ -54,3 +54,6 @@ for timeBudget in set(list(csv_tables.keys()) + list(tmp_tables.keys())):
 
     # Save the figure with a filename that includes the timeBudget
     plt.savefig(f'comparison-tabelle_{timeBudget}.png', bbox_inches='tight')
+
+    # Write the DataFrame to a .txt file
+    df_all.to_csv(f'comparison-tabelle_{timeBudget}.txt', sep='\t', index=False)

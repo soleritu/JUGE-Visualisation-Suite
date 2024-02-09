@@ -27,10 +27,13 @@ def plot_data(filenames):
         # Concatenate all DataFrames in the list
         df_all = pd.concat(dfs, ignore_index=True)
 
+        # Sort the DataFrame by 'benchmark' and 'tool' columns in alphabetical order
+        df_all = df_all.sort_values(['benchmark', 'tool'])
+
         # Create a new figure
         plt.figure(figsize=(10, 6))
 
-        # Create a horizontal bar plot
+        # Create a horizontal bar plot with sorted tool names
         ax = sns.barplot(x='score.mean', y='benchmark', hue='tool', data=df_all, errorbar=None, orient='h', palette='viridis')
 
         # Set x-axis limits
@@ -49,6 +52,9 @@ def plot_data(filenames):
 
         # Save the plot as a PNG file with a name that includes the budget
         plt.savefig(f"score_{budget}_seconds.png")
+
+        # Write the DataFrame to a .txt file
+        df_all.to_csv(f'score_{budget}_seconds.txt', sep='\t', index=False)
 
 # Get a list of all 'score_per_subject.csv' files in the current directory and its subdirectories
 csv_files = glob('**/score_per_subject.csv', recursive=True)
